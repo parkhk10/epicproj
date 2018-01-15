@@ -1,0 +1,171 @@
+.header {
+	margin: 0px 0px 0px 0px;
+	font-family: "Montserrat";
+}
+
+.colLheader {
+	float: left;
+	width: 66%;
+	height: 100%;
+	background-color: #F6F6F6;
+}
+	/* overflow: scroll; */
+
+.right-header {
+	float: right;
+	width: 34%;
+	height: 100%;
+	/*background-color: #E1B16A;*/
+}
+
+
+h2 {
+	text-align: center;
+	font-family: "Montserrat";
+}
+
+h3 {
+	text-align: center;
+	font-family: "Montserrat";
+	display: inline-block;
+}
+
+.date-toggle {
+	text-align: center;
+}
+
+img {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+}
+
+.back-arrow {
+	display:inline-block;
+	margin-right: 10px;
+}
+
+.panel {
+	display: inline-block;
+	width: 33%;
+	height: 100%;
+  vertical-align: top;
+}
+
+.project-box {
+	float: left;
+	border-radius: 15px;
+  background: #F6F6F6;
+  padding: 20px;
+  width: 180px;
+  font-family: "Montserrat";
+  vertical-align: center;
+}
+
+.top-box {
+	margin: 25px 25px 10px 25px;
+	height: 32px;
+}
+
+.bottom-box {
+	margin: 0px 0px 0px 25px;
+	height: 10px;
+}
+
+#blue {
+	color: #444C5C;
+}
+
+#red {
+	color: #CE5A57;
+}
+
+#green {
+	color: #78A5A3;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 2px solid;
+  position: relative;
+  border-color: #FFFFFF;
+  margin-left: -7px;
+  top: 100%;
+}
+
+.line {
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 10;
+  /*top: 17%;
+  left: 9%;*/
+  border: 1px solid;
+  border-width: 0 0 0 1px;
+  width: 1px;
+  height: 70px;
+  color: #F6F6F6;
+  margin-left: 40px;
+  margin-top: 97px;
+}
+
+.line-no-margin {
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 10;
+  /*top: 17%;
+  left: 9%;*/
+  border: 1px solid;
+  border-width: 0 0 0 1px;
+  width: 1px;
+  height: 70px;
+  color: #F6F6F6;
+  margin-left: 40px;
+  margin-top: 14px;
+}
+
+input {
+  display: inline-block;
+  /* position: relative; */
+  outline: 0;
+  border-width: 0 0 1px 0;
+  border-color: #F6F6F6;
+  top: 50px;
+  left: 7px;
+}
+
+input:focus {
+  border-color: #000000;
+}
+
+.blue-background {
+	background-color: #444C5C;
+}
+
+.red-background {
+	background-color: #CE5A57;
+}
+
+.green-background {
+	background-color: #78A5A3;
+}
+
+.horizontal-line {
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 10;
+  /*top: 17%;
+  left: 9%;*/
+  border: 1px solid;
+  border-width: 1 0 0 0px;
+  width:345px;
+  height: 1px;
+  color: #F6F6F6;
+  margin-left: 40px;
+  margin-top: 20px;
+  color: black;
+}
