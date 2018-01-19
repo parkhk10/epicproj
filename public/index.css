@@ -59,11 +59,13 @@ img {
   padding: 20px;
   width: 180px;
   font-family: "Montserrat";
-  vertical-align: center;
+	padding: 10px 10px 10px 10px;
+	vertical-align: middle;
+	display: table;
 }
 
 .top-box {
-	margin: 25px 25px 10px 25px;
+	margin: 25px 25px 0px 25px;
 	height: 32px;
 }
 
@@ -108,7 +110,7 @@ img {
   height: 70px;
   color: #F6F6F6;
   margin-left: 40px;
-  margin-top: 97px;
+  margin-top: 65px;
 }
 
 .line-no-margin {
@@ -135,6 +137,12 @@ input {
   border-color: #F6F6F6;
   top: 50px;
   left: 7px;
+}
+
+/* special formatting for input fields for STEPS only (so as to not meddle with input fields in modal) */
+.step-input {
+	margin-top: 40px;
+	margin-left: 5px;
 }
 
 input:focus {

@@ -31,7 +31,7 @@
       </div>
       <div class="modal-body">
         	<!-- form -->
-					<form action="/task" method="POST">
+					<form id="new-task-form">
 					 <div class="form-group">
 						 <label for="task-name" class="col-form-label">Task</label>
 						  <input type="text" class="form-control" id="recipient-name" name="name" placeholder="e.g. first client presentation">
@@ -42,7 +42,7 @@
 					 </div>
 					 <div class="modal-footer">
 						 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<input type="submit" class="btn btn-info" value="Save" >
+						 <button type="button" id="save-button" class="btn btn-info" data-dismiss="modal">Save</button>
 				 </form>
       </div>
 			<!--
@@ -77,6 +77,7 @@
 			Monday, Oct. 2
 			<img src="images/Forward Arrow Black.png" class="forward-arrow"/> -->
 		<div class="horizontal-line"></div>
+		<div id="in-progress-steps"></div>
 	</div>
 
 <!-- scripts from bootstrap -->
