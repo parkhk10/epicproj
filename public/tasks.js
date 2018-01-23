@@ -15,6 +15,7 @@ $(document).ready(function() {
 
 	$.get('/step')
 		.done(function(steps) {
+			console.log(steps)
 			var $list = $('<ol/>');
 			$('#in-progress-steps').append($list);
 			for (var i = 0; i < steps.length; i++) {
@@ -62,13 +63,13 @@ $(document).ready(function() {
 
 				// rendering the steps that exist for each task
 				for (var j = 0; j < task.steps.length; j++) {
-
+					if (task.steps[j].in_progress == 1) {continue};
 					// create line
 					var $lineNoMargin = $('<div/>');
 					$lineNoMargin.addClass('line-no-margin');
 					// create circle
-					var $circle = $('<button/>');
-					var currentStep = task.steps[j].step_id;
+					var $circle = $('<div/>');
+					var currentStep = task.steps[j].id;
 					$circle.addClass('circle');
 					$circle.attr('id', currentStep);
 					// create the input
@@ -84,14 +85,26 @@ $(document).ready(function() {
 					//      handler that will update in_progress to true
 					//      $inputTextNext.click(function( $.put(...) ))
 					// LEFT OFF HEREEEEEEEEEEE
-					$circle.click(function(){
-						// stepInProgress should be the value of the input field that has the same class as the clicked button
-						var clickedCircleId = $(this).attr('id');
-						var stepInProgress = $('#' + clickedCircleId).val();
-						console.log(clickedCircleId);
-						console.log(stepInProgress);
-						$.put('/update/' + task.steps[j].step_id, stepInProgress) // i think this should be step_id ... look up doc for .put
+					var step = task.steps[j]
+
+					$circle.click(function markTaskInProgress() {
+						$.post('/update/' + this.id)
+						 	.done(function(res) {
+								console.log(res);
+								location.reload()
+							})
+							.fail(function(err) {
+								console.log(err)
+							})
 					})
+					// $circle.click(function(){
+					// 	console.log(task.steps);
+					// 	// stepInProgress should be the value of the input field that has the same class as the clicked button
+					// 	// get the step of the task that matches the circleId
+					// 	console.log(this)
+          //
+					// 		// i think this should be step_id ... look up doc for .put
+					// })
 
 					// add the circle then the input to the line div
 					$lineNoMargin.append($circle);

@@ -97,6 +97,15 @@ img {
   top: 100%;
 }
 
+.circle:hover {
+	background-color: #FFFFFF;
+}
+
+.btn-primary {
+	background-color: #E1B16A;
+	border-color: #E1B16A;
+}
+
 .line {
   content: "";
   display: block;
@@ -139,6 +148,10 @@ input {
   left: 7px;
 }
 
+::placeholder { /* Most modern browsers support this now. */
+   color: #FFFFFF;
+}
+
 /* special formatting for input fields for STEPS only (so as to not meddle with input fields in modal) */
 .step-input {
 	margin-top: 40px;
@@ -176,4 +189,8 @@ input:focus {
   margin-left: 40px;
   margin-top: 20px;
   color: black;
+}
+
+#in-progress-steps {
+	margin-top: 20px;
 }

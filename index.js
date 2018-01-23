@@ -21,7 +21,6 @@ app.get('/', function(req, res) { //when you get the / request, respond with the
 
 app.get('/task', function(req, res) { //what you do when you get a request from a client & response
 	db.all("SELECT t.id as task_id, name, deadline, t.done as task_done, s.id as step_id, step, in_progress, s.done as step_done FROM task t LEFT JOIN step s ON t.id = s.task_id;", function(err, tasks) {
-    console.log(tasks)
 		if (err) {
 			console.log(err);
 			return res.status(500).json({ message: 'could not retrieve tasks' })
@@ -90,27 +89,26 @@ app.post('/task/:id/step', function(req, res) {
 	});
 })
 
-// app.get('/step', function(req, res) {
-//   db.run('SELECT * FROM step WHERE in_progress = 1);' , function(err, steps) {
-//     if (err){
-// 			console.error(err);
-// 			return res.status(500).json({ message: 'Error! Could not create step' });
-// 		}
-//     res.status(200).json(steps); // all the steps where in_progress is 1
-//   }
-// })
-//
+app.get('/step', function(req, res) {
+  db.all('SELECT * FROM step WHERE in_progress=1;' , function(err, steps) {
+    if (err){
+			console.error(err);
+			return res.status(500).json({ message: 'Error! Could not create step' });
+		}
+    res.status(200).json(steps); // all the steps where in_progress is 1
+  })
+})
+
 // updateing in_progress to 1 for steps that have been clicked
-app.put('/update/:id', function(req, res) {
-  db.run('UPDATE step SET in_progress = 1 WHERE id = req.params.id);', function(err, steps) {
+app.post('/update/:id', function(req, res) {
+  db.run('UPDATE step SET in_progress = 1 WHERE id = $id;', {$id: req.params.id}, function(err, steps) {
     console.log('put request')
     if (err) {
 			console.error(err);
 			return res.status(500).json({ message: 'Error! Could not create step' });
 		}
     res.status(200).json({ message: 'Successfully updated step to in progress' });
-  }
-)
+  })
 })
 
 
